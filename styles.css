@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Very-Dark-Blue-Main: hsl(217, 54%, 11%);
+    --Very-Dark-Blue-Card: hsl(216, 51%, 16%);
+    --Very-Dark-Blue-Line: hsl(216, 32%, 27%);
+    --Soft-Blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 0;
+}
+
+html {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+    font-size: 62.5%;
+    overflow-wrap: break-word;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    background-color: var(--Very-Dark-Blue-Main);
+    overflow-x: hidden;
+}
+
+h1,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+main {
+    padding:0 2.4rem;
+}
+
+.card {
+    position: relative;
+    max-width: 32.7rem;
+    margin: 0 auto;
+    padding: 2.4rem;
+    border-radius: 2rem;
+    box-shadow: 0px 2.5rem 2.5rem rgba(0, 0, 0, 0.0476518);
+    background-color: var(--Very-Dark-Blue-Card);
+    overflow: hidden;
+}
+
+.card__header .card__figure:hover:before {
+    content:'';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('./images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.card__header .card__figure:hover:after {
+    content:'';
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    opacity: 0.5;
+    background-color: var(--Cyan);
+    cursor: pointer;
+}
+
+.card__figure {
+    position:relative;
+    margin:0;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.card__title {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    font-weight: 700;
+    margin: 2.4rem 0 1.2rem 0;
+    color: var(--White);
+}
+
+.card__copy {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    font-weight: 300;
+    color: var(--Soft-Blue);
+}
+
+.card__infos {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.6rem 0;
+}
+
+.card__price, .card__date {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.card__price > .card__figure, .card__date > .card__figure {
+    margin-right: 7px;
+}
+
+.card__price {
+    color: var(--Cyan);
+    font-weight: 600;
+}
+
+.card__date {
+    color: var(--Soft-Blue);
+}
+
+.card__line {
+    border:0;
+    border-top: 0.1rem solid var(--Very-Dark-Blue-Line);
+    border-radius: 0;
+    margin:0;
+    box-shadow: none;
+}
+
+.card__author {
+    display: flex;
+    align-items: center;
+    margin-top: 1.6rem;
+}
+
+.card__author .card__figure {
+    margin-right: 1.6rem;
+}
+
+.card__author img {
+    height: 3.3rem;
+    width: 3.3rem;
+    border: 0.1rem solid var(--White);
+    border-radius: 4rem;
+}
+
+.card__author .card__signature {
+    color: var(--Soft-Blue);
+    font-size: 1.6rem;
+}
+
+.card__author .card__signature span {
+    color: var(--White);
+}
+
+.card__author .card__signature span:hover {
+    color: var(--Cyan);
+    cursor:pointer;
+}
+
+@media screen and (min-width: 480px) {
+    .card__title {
+        margin: 2.4rem 0 1.6rem 0;
+    }
+
+    .card__infos {
+        margin: 2.4rem 0;
+    }
+}
